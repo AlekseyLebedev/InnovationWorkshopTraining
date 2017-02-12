@@ -38,3 +38,9 @@ captures/
 
 # Keystore files
 *.jks
+
+# Custom
+.idea
+desktop.ini
+Thumbs.db
+.DS_Store
