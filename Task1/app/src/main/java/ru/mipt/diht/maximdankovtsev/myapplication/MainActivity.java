@@ -10,11 +10,10 @@ import android.widget.TextView;
 public class MainActivity extends Activity {
 
     // Bundle keys
-    private static final String STATE_VALUE = "numberValue";
-    private static final String STATE_AUTO_MODE = "autoIncrement";
+    private static final String STATE_VALUE = "value";
+    private final int DEFAULT_TIME_DELTA = 1000;
     private TextView textViewNum;
     private int value = 0;
-    private boolean autoMode = false;
     private AutoIncrementer autoIncrementer;
 
     @Override
@@ -29,16 +28,14 @@ public class MainActivity extends Activity {
         buttonInc.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (!autoMode) {
-                    autoIncrementer = new AutoIncrementer();
+                if (autoIncrementer == null || autoIncrementer.isCancelled()) {
+                    autoIncrementer = new AutoIncrementer(value, DEFAULT_TIME_DELTA);
                     autoIncrementer.link(thisActivity);
                     autoIncrementer.execute();
                 } else {
-                    if (autoIncrementer != null && !autoIncrementer.isCancelled()) {
-                        autoIncrementer.cancel(false);
-                    }
+                    autoIncrementer.cancel(false);
+                    autoIncrementer = null;
                 }
-                autoMode = !autoMode;
             }
         });
     }
@@ -47,7 +44,6 @@ public class MainActivity extends Activity {
     protected void onSaveInstanceState(Bundle outState) {
         super.onSaveInstanceState(outState);
         outState.putInt(STATE_VALUE, value);
-        outState.putBoolean(STATE_AUTO_MODE, autoMode);
     }
 
     @Override
@@ -56,21 +52,16 @@ public class MainActivity extends Activity {
         value = savedInstanceState.getInt(STATE_VALUE);
         textViewNum.setText(String.valueOf(value));
         // Restore auto increment if it was turned on.
-        autoMode = savedInstanceState.getBoolean(STATE_AUTO_MODE);
-        if (autoMode) {
-            autoIncrementer = (AutoIncrementer) getLastNonConfigurationInstance();
-            if (autoIncrementer == null) {
-                autoMode = false;
-            } else {
-                autoIncrementer.link(this);
-                value = autoIncrementer.getLocalValue();
-            }
+        autoIncrementer = (AutoIncrementer) getLastNonConfigurationInstance();
+        if (autoIncrementer != null && !autoIncrementer.isCancelled()) {
+            autoIncrementer.link(this);
+            value = autoIncrementer.getLocalValue();
         }
     }
 
     @Override
     public Object onRetainNonConfigurationInstance() {
-        if (autoIncrementer != null) {
+        if (autoIncrementer != null && !autoIncrementer.isCancelled()) {
             autoIncrementer.unlink();
             return autoIncrementer;
         } else {
@@ -79,8 +70,15 @@ public class MainActivity extends Activity {
     }
 
     static private class AutoIncrementer extends AsyncTask<Void, Integer, Void> {
-        int localValue;
+        private int localValue;
+        private int timeDelta = 1000;
         private MainActivity mainActivity;
+
+        public AutoIncrementer(int value, int timeDelta) {
+            super();
+            this.localValue = value;
+            this.timeDelta = timeDelta;
+        }
 
         public int getLocalValue() {
             return localValue;
@@ -104,13 +102,15 @@ public class MainActivity extends Activity {
         protected Void doInBackground(Void... params) {
             try {
                 while(!isCancelled()) {
-                    Thread.sleep(1000);
+                    Thread.sleep(timeDelta);
                     // While swapping links due to change of configuration,
                     // we have to save progress in local variable.
-                    localValue += 1;
-                    if (mainActivity != null) {
-                        mainActivity.value += 1;
-                        publishProgress(mainActivity.value);
+                    if (!isCancelled()) {
+                        localValue += 1;
+                        if (mainActivity != null) {
+                            mainActivity.value += 1;
+                            publishProgress(mainActivity.value);
+                        }
                     }
                 }
             } catch (InterruptedException e) {
