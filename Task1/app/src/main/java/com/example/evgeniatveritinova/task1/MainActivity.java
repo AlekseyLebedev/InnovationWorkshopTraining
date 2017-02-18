@@ -16,7 +16,7 @@ public class MainActivity extends Activity {
     private TextView text;
     private CountTask countTask;
 
-    static final String STATE_NUMBER = "number";
+    static private final String STATE_NUMBER = "number";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -24,18 +24,12 @@ public class MainActivity extends Activity {
         setContentView(R.layout.activity_main);
 
         Button button = (Button) findViewById(R.id.button);
-        final MainActivity thisActivity = this;
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                switch (v.getId()) {
-
-                    case R.id.button:
-                        countTask = new CountTask();
-                        countTask.link(thisActivity);
-                        countTask.execute();
-                        break;
-                }
+                countTask = new CountTask();
+                countTask.link(MainActivity.this);
+                countTask.execute();
             }
         });
 
