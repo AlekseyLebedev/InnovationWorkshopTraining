@@ -12,8 +12,7 @@ import android.os.SystemClock;
 
 
 public class MainActivity extends AppCompatActivity {
-
-
+    private static final String DEBUG_TAG = "counter debug";
     private static final String COUNT_TAG = "count";
     private static final String WORKING_TAG = "working";
     private TextView tv;
@@ -25,38 +24,38 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        Log.d("debug", "find UI");
+        Log.d(DEBUG_TAG, "find UI");
         setContentView(R.layout.activity_main);
         tv = (TextView) findViewById(R.id.textView);
         btn = (Button) findViewById(R.id.button);
 
         if (savedInstanceState != null) {
-            Log.d("debug", "get state");
+            Log.d(DEBUG_TAG, "get state");
             working = savedInstanceState.getInt(WORKING_TAG);
-            Log.d("debug", "working = " + working);
+            Log.d(DEBUG_TAG, "working = " + working);
             count = savedInstanceState.getInt(COUNT_TAG);
-            Log.d("debug", "count = " + count);
+            Log.d(DEBUG_TAG, "count = " + count);
             tv.setText(Integer.toString(count));
         }
 
         counter = (Counter) getLastCustomNonConfigurationInstance();
         if (counter != null) {
-            Log.d("debug", "link");
+            Log.d(DEBUG_TAG, "link");
             counter.link(this);
         }
-        Log.d("debug", "set click listener");
+        Log.d(DEBUG_TAG, "set click listener");
         btn.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 if (working > 0) {
-                    Log.d("debug", "Start cancelling task");
+                    Log.d(DEBUG_TAG, "Start cancelling task");
                     counter.cancel(false);
                     counter = null;
                 } else {
-                    Log.d("debug", "New task");
+                    Log.d(DEBUG_TAG, "New task");
                     counter = new Counter();
-                    Log.d("debug", "link");
+                    Log.d(DEBUG_TAG, "link");
                     counter.link(MainActivity.this);
-                    Log.d("debug", "execute");
+                    Log.d(DEBUG_TAG, "execute");
                     counter.execute(count);
                 }
                 working *= -1;
@@ -76,7 +75,7 @@ public class MainActivity extends AppCompatActivity {
     @Override
     public Object onRetainCustomNonConfigurationInstance () {
         if (working > 0) {
-            Log.d("debug", "unlink");
+            Log.d(DEBUG_TAG, "unlink");
             counter.link(null);
         }
         return counter;
@@ -91,13 +90,13 @@ public class MainActivity extends AppCompatActivity {
 
         @Override
         protected Void doInBackground(Integer... params) {
-            Log.d("debug", "start with " + params[0]);
+            Log.d(DEBUG_TAG, "start with " + params[0]);
             for (int i = params[0];; ++i) {
                 if (isCancelled()) {
-                    Log.d("debug", "FULL STOP");
+                    Log.d(DEBUG_TAG, "FULL STOP");
                     break;
                 }
-                Log.d("debug", "new i = " + i);
+                Log.d(DEBUG_TAG, "new i = " + i);
                 publishProgress(i);
                 SystemClock.sleep(1000);
             }
@@ -107,9 +106,9 @@ public class MainActivity extends AppCompatActivity {
         @Override
         protected void onProgressUpdate(Integer... values) {
             super.onProgressUpdate(values);
-            Log.d("debug", "try to upd with " + values[0]);
+            Log.d(DEBUG_TAG, "try to upd with " + values[0]);
             if (myActivity != null){
-                Log.d("debug", "upd with " + values[0]);
+                Log.d(DEBUG_TAG, "upd with " + values[0]);
                 myActivity.tv.setText(Integer.toString(values[0]));
                 myActivity.count = values[0];
             }
