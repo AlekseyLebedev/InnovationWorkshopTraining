@@ -26,24 +26,36 @@ public class MainActivity extends AppCompatActivity {
 
         mCounter = (Button)findViewById(R.id.buttonID);
         mInfoTextView = (TextView) findViewById(R.id.textViewID);
-        mCounterTask = new CounterTask();
+        mCounterTask = (CounterTask) getLastCustomNonConfigurationInstance();
+        if (mCounterTask == null) {
+            mCounterTask = new CounterTask();
+        }
+        mCounterTask.setParent(this);
         mCounter.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 mCounterTask.execute();
             }
         });
-
-
     }
 
-    class CounterTask extends AsyncTask<Void, Integer, Void> {
+    @Override
+    public Object onRetainCustomNonConfigurationInstance() {
+        return mCounterTask;
+    }
+
+    static class CounterTask extends AsyncTask<Void, Integer, Void> {
+        MainActivity parent;
+
+        public void setParent(MainActivity activity) {
+            parent = activity;
+        }
 
         @Override
         protected void onPreExecute() {
             super.onPreExecute();
-            mInfoTextView.setText("Старт");
-            mCounter.setVisibility(View.INVISIBLE);
+            parent.mInfoTextView.setText("Старт");
+            parent.mCounter.setVisibility(View.INVISIBLE);
         }
 
         @Override
@@ -51,8 +63,8 @@ public class MainActivity extends AppCompatActivity {
             try {
                 while(true) {
                     TimeUnit.SECONDS.sleep(1);
-                    ++mTmpCount;
-                    publishProgress(mTmpCount);
+                    ++parent.mTmpCount;
+                    publishProgress(parent.mTmpCount);
                 }
             } catch (InterruptedException e) {
                 e.printStackTrace();
@@ -63,14 +75,14 @@ public class MainActivity extends AppCompatActivity {
         @Override
         protected void onProgressUpdate(Integer... counter) {
             super.onProgressUpdate(counter);
-            mInfoTextView.setText("Я насчитал " + counter[0]);
+            parent.mInfoTextView.setText("Я насчитал " + counter[0]);
         }
 
         @Override
         protected void onPostExecute(Void result) {
             super.onPostExecute(result);
-            mCounter.setVisibility(View.VISIBLE);
-            mInfoTextView.setText("Финиш");
+            parent.mCounter.setVisibility(View.VISIBLE);
+            parent.mInfoTextView.setText("Финиш");
         }
     }
 
