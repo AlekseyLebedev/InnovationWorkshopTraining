@@ -1,14 +1,15 @@
 package com.example.ibirby.counter;
 
 import android.os.AsyncTask;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.os.SystemClock;
+import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
-import android.os.SystemClock;
+import java.util.Locale;
 
 
 public class MainActivity extends AppCompatActivity {
@@ -16,7 +17,6 @@ public class MainActivity extends AppCompatActivity {
     private static final String COUNT_TAG = "count";
     private static final String WORKING_TAG = "working";
     private TextView tv;
-    private Button btn;
     private int count = 0;
     private int working = -1;
     private Counter counter = null;
@@ -27,7 +27,7 @@ public class MainActivity extends AppCompatActivity {
         Log.d(DEBUG_TAG, "find UI");
         setContentView(R.layout.activity_main);
         tv = (TextView) findViewById(R.id.textView);
-        btn = (Button) findViewById(R.id.button);
+        Button btn = (Button) findViewById(R.id.button);
 
         if (savedInstanceState != null) {
             Log.d(DEBUG_TAG, "get state");
@@ -35,7 +35,7 @@ public class MainActivity extends AppCompatActivity {
             Log.d(DEBUG_TAG, "working = " + working);
             count = savedInstanceState.getInt(COUNT_TAG);
             Log.d(DEBUG_TAG, "count = " + count);
-            tv.setText(Integer.toString(count));
+            tv.setText(String.format(Locale.ENGLISH, "%d", count));
         }
 
         counter = (Counter) getLastCustomNonConfigurationInstance();
@@ -82,9 +82,9 @@ public class MainActivity extends AppCompatActivity {
     }
 
     static class Counter extends AsyncTask<Integer, Integer, Void> {
-        private MainActivity myActivity = null;
+        private MainActivity myActivity= null;
 
-        public void link(MainActivity act){
+        void link(MainActivity act){
             myActivity = act;
         }
 
@@ -109,7 +109,7 @@ public class MainActivity extends AppCompatActivity {
             Log.d(DEBUG_TAG, "try to upd with " + values[0]);
             if (myActivity != null){
                 Log.d(DEBUG_TAG, "upd with " + values[0]);
-                myActivity.tv.setText(Integer.toString(values[0]));
+                myActivity.tv.setText(String.format(Locale.ENGLISH, "%d", values[0]));
                 myActivity.count = values[0];
             }
         }
