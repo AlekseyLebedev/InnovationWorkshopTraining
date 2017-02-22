@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">MultiScreenApplication</string>
+    <string name="splash_label">Splash Screen Demo</string>
+</resources>

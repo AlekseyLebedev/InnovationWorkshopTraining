@@ -11,6 +11,7 @@ public class MainActivity extends Activity {
 
     // Bundle keys
     private static final String STATE_VALUE = "value";
+
     private final int DEFAULT_TIME_DELTA = 1000;
     private TextView textViewNum;
     private int value = 0;
@@ -21,16 +22,15 @@ public class MainActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        Button buttonInc = (Button) findViewById(R.id.button_inc);
         textViewNum = (TextView) findViewById(R.id.text_num);
-        final MainActivity thisActivity = this;
+        Button buttonInc = (Button) findViewById(R.id.button_inc);
 
         buttonInc.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 if (autoIncrementer == null || autoIncrementer.isCancelled()) {
                     autoIncrementer = new AutoIncrementer(value, DEFAULT_TIME_DELTA);
-                    autoIncrementer.link(thisActivity);
+                    autoIncrementer.link(MainActivity.this);
                     autoIncrementer.execute();
                 } else {
                     autoIncrementer.cancel(false);
@@ -101,7 +101,7 @@ public class MainActivity extends Activity {
         @Override
         protected Void doInBackground(Void... params) {
             try {
-                while(!isCancelled()) {
+                while (!isCancelled()) {
                     Thread.sleep(timeDelta);
                     // While swapping links due to change of configuration,
                     // we have to save progress in local variable.
@@ -118,5 +118,5 @@ public class MainActivity extends Activity {
             }
             return null;
         }
-    };
+    }
 }

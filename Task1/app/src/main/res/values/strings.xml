@@ -1,3 +1,4 @@
 <resources>
-    <string name="app_name">My Application</string>
+    <string name="app_name">Android exercises</string>
+    <string name="button_caption">Hello!</string>string>
 </resources>

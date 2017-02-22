@@ -8,23 +8,10 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="ru.mipt.diht.maximdankovtsev.myapplication.MainActivity">
+    tools:context="ru.mipt.diht.maximdankovtsev.fragments.MainActivity">
 
     <TextView
-        android:id="@+id/text_num"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_centerVertical="true"
-        android:padding="20dp"
-        android:text="0" />
-
-    <Button
-        android:id="@+id/button_inc"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentRight="true"
-        android:layout_centerVertical="true"
-        android:layout_toLeftOf="@+id/text_num"
-        android:padding="20dp"
-        android:text="@string/button_caption" />
+        android:text="Hello World!" />
 </RelativeLayout>
