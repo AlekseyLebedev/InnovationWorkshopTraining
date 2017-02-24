@@ -42,8 +42,11 @@ public class SecondActivity extends AppCompatActivity {
         Log.d("myLogs", "requestCode = " + requestCode + ", resultCode = " + resultCode);
 
         if (requestCode == REQUEST_CODE && resultCode == RESULT_OK) {
-            mLastName = data.getStringExtra(getString(R.string.last_name));
-            mFirstName = data.getStringExtra(getString(R.string.first_name));
+
+            Person mPerson = data.getParcelableExtra(Person.class.getCanonicalName());
+            mFirstName = mPerson.mFirstName;
+            mLastName = mPerson.mLastName;
+
             Log.d("myLogs", "name = " + mFirstName + mLastName);
         }
     }

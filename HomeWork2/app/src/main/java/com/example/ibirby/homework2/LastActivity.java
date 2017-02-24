@@ -24,8 +24,8 @@ public class LastActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent();
-                intent.putExtra(getString(R.string.last_name), mLastName.getText().toString());
-                intent.putExtra(getString(R.string.first_name), mFirstName.getText().toString());
+                intent.putExtra(Person.class.getCanonicalName(),
+                        new Person(mFirstName.getText().toString(), mLastName.getText().toString()));
                 Log.d(LOG_TAG, "put name = " +
                         mFirstName.getText().toString() + mLastName.getText().toString());
                 setResult(RESULT_OK, intent);
