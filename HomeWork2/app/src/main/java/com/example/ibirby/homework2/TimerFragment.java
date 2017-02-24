@@ -10,7 +10,7 @@ import java.util.Timer;
 import java.util.TimerTask;
 
 public class TimerFragment extends Fragment {
-    static private final String LOG_TAG= "myLogs";
+    private final static String LOG_TAG= "myLogs";
 
     private Timer mTimer;
     private MyTask mTask;
@@ -22,18 +22,18 @@ public class TimerFragment extends Fragment {
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        Log.i(LOG_TAG, "timer onCreate");
+        Log.d(LOG_TAG, "timer onCreate");
         setRetainInstance(true);
         mTask = new MyTask();
         mTimer = new Timer();
-        mTimer.schedule(mTask, 10000);
+        mTimer.schedule(mTask, 1000);
     }
 
     private class MyTask extends TimerTask {
 
         @Override
         public void run() {
-            Log.i(LOG_TAG, "timer run");
+            Log.d(LOG_TAG, "timer run");
             ((SplashActivity) getActivity()).nextAct();
         }
     }

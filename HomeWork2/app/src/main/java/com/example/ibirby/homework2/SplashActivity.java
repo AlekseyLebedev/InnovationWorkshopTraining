@@ -8,7 +8,7 @@ import android.support.v4.app.FragmentManager;
 import android.support.v7.app.AppCompatActivity;
 
 public class SplashActivity extends AppCompatActivity {
-    static private final String LOG_TAG= "myLogs";
+    private final static String LOG_TAG= "myLogs";
 
     private TimerFragment mTimer;
 
