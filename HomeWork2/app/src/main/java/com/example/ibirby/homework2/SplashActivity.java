@@ -1,10 +1,10 @@
 package com.example.ibirby.homework2;
 
-import android.app.Fragment;
-import android.app.FragmentManager;
-import android.app.FragmentTransaction;
+
+import android.support.v4.app.FragmentTransaction;
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.v4.app.FragmentManager;
 import android.support.v7.app.AppCompatActivity;
 
 public class SplashActivity extends AppCompatActivity {
@@ -16,12 +16,16 @@ public class SplashActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.splash_screen);
-        mTimer = new TimerFragment();
-        FragmentManager fragmentManager = getFragmentManager();
-        FragmentTransaction transaction = fragmentManager.beginTransaction();
-        transaction.add(mTimer, getString(R.string.timer));
 
-        transaction.commit();
+        FragmentManager fragmentManager = getSupportFragmentManager();
+        mTimer = (TimerFragment) fragmentManager.findFragmentByTag(getString(R.string.timer));
+
+        if (mTimer == null) {
+            mTimer = new TimerFragment();
+            FragmentTransaction transaction = fragmentManager.beginTransaction();
+            transaction.add(mTimer, getString(R.string.timer));
+            transaction.commit();
+        }
     }
 
     void nextAct() {
