@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">SeveralActivitiesTask</string>
+    <string name="request_first_and_last_name">Request first and last name</string>
+    <string name="hello_template">Hello, !</string>
+    <string name="first_name_hint">First Name</string>
+    <string name="last_name_hint">Last Name</string>
+</resources>
