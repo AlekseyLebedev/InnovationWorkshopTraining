@@ -24,8 +24,10 @@ public class EnterNameActivity extends Activity {
             @Override
             public void onClick(View v) {
                 Intent confirm = new Intent();
-                confirm.putExtra(MainActivity.STATE_FIRST_NAME, firstNameEdit.getText().toString());
-                confirm.putExtra(MainActivity.STATE_SECOND_NAME, secondNameEdit.getText().toString());
+                MainActivity.Person person = new MainActivity.Person(firstNameEdit.getText().toString(),
+                        secondNameEdit.getText().toString());
+
+                confirm.putExtra(MainActivity.STATE_PERSON, person);
 
                 EnterNameActivity.this.setResult(RESULT_OK, confirm);
                 EnterNameActivity.this.finish();
