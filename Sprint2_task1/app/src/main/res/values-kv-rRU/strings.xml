@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">Sprint2_task1</string>
+    <string name="start_activity_name">Привет!</string>
+    <string name="reqest">Запрос имени и фамилии</string>
+</resources>
