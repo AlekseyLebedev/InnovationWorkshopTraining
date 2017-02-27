@@ -21,7 +21,7 @@ public class SplashScreen extends AppCompatActivity {
         setContentView(R.layout.activity_splash_screen);
 
         if (savedInstanceState != null) {
-            timePassed = savedInstanceState.getInt(TIME_PASSED);
+            timePassed = savedInstanceState.getInt(TIME_PASSED, 0);
         }
     }
 

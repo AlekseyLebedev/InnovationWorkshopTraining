@@ -19,20 +19,6 @@ public class Activity2 extends AppCompatActivity {
 
         Button requestBtn = (Button) findViewById(R.id.button_call_act3);
 
-        requestBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent questionIntent = new Intent(Activity2.this,
-                        Activity3.class);
-                startActivity(questionIntent);
-            }
-        });
-    }
-
-    @Override
-    protected void onResume() {
-        super.onResume();
-
         Person who = getIntent().getParcelableExtra("Person");
 
         if (who == null) {
@@ -41,5 +27,15 @@ public class Activity2 extends AppCompatActivity {
 
         TextView helloText = (TextView) findViewById(R.id.textViewHello);
         helloText.setText("Hello " + who.getFirstName() + " " + who.getLastName() + "!");
+
+        requestBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent questionIntent = new Intent(Activity2.this,
+                        Activity3.class);
+                startActivity(questionIntent);
+                finish();
+            }
+        });
     }
 }
