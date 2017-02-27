@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item name="text" type="id" />
+    <item name="text_fragment" type="id" />
+    <item name="spin" type="id" />
+    <item name="spin_fragment" type="id" />
+</resources>
