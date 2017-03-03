@@ -1,6 +1,7 @@
 package com.rtrsdk.arsentii.fragmentstask;
 
 
+import android.app.FragmentManager;
 import android.app.FragmentTransaction;
 import android.os.Bundle;
 import android.app.Fragment;
@@ -59,10 +60,16 @@ public class Fragment2 extends Fragment {
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Fragment fragment = Fragment1.newInstance();
-                FragmentTransaction transaction = getFragmentManager().beginTransaction();
+                FragmentManager fragmentManager = getFragmentManager();
 
-                transaction.replace(R.id.activity_main, fragment);
+                Fragment fragment = fragmentManager.findFragmentByTag(MainActivity.FragmentType.Fragment1.toString());
+                if (fragment == null) {
+                    fragment = Fragment1.newInstance();
+                }
+
+                FragmentTransaction transaction = fragmentManager.beginTransaction();
+
+                transaction.replace(R.id.activity_main, fragment, MainActivity.FragmentType.Fragment1.toString());
                 transaction.addToBackStack(null);
 
                 transaction.commit();
