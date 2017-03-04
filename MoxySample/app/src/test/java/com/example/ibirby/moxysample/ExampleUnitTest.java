@@ -1,4 +1,4 @@
-package com.example.ibirby.fragmenttask;
+package com.example.ibirby.moxysample;
 
 import org.junit.Test;
 

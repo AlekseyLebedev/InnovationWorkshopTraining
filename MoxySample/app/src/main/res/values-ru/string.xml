@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="request">Введите имя и фамилию</string>
+    <string name="hello">Привет, %1$s %2$s!</string>
+    <string name="first_name">Имя</string>
+    <string name="last_name">Фамилия</string>
+</resources>

@@ -1,4 +1,4 @@
-package com.example.ibirby.fragmenttask;
+package com.example.ibirby.moxysample;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -22,6 +22,6 @@ public class ExampleInstrumentedTest {
         // Context of the app under test.
         Context appContext = InstrumentationRegistry.getTargetContext();
 
-        assertEquals("com.example.ibirby.fragmenttask", appContext.getPackageName());
+        assertEquals("com.example.ibirby.moxysample", appContext.getPackageName());
     }
 }

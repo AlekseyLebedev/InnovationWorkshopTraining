@@ -21,6 +21,7 @@ import android.widget.Spinner;
 import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
+
     private static final String LOG_TAG = "myLogs";
     private static final String TEXT_FRAGMENT = "TEXT_EDIT";
     private static final String SPIN_FRAGMENT = "SPINNER";
@@ -69,11 +70,14 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public static class TextEditFragment extends Fragment {
-        public TextEditFragment() {}
+
+        public TextEditFragment() {
+        }
 
         @Nullable
         @Override
-        public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
+        public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container,
+                @Nullable Bundle savedInstanceState) {
             Log.d(LOG_TAG, "Создали TextFragmentView");
             View view = inflater.inflate(R.layout.fragment_layout, container, false);
             LinearLayout mLinearLayout = (LinearLayout) view.findViewById(R.id.frRoot);
@@ -109,11 +113,13 @@ public class MainActivity extends AppCompatActivity {
 
     public static class SpinnerFragment extends Fragment {
 
-        public SpinnerFragment() {}
+        public SpinnerFragment() {
+        }
 
         @Nullable
         @Override
-        public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
+        public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container,
+                @Nullable Bundle savedInstanceState) {
             Log.d(LOG_TAG, "Создали SpinFragmentView");
             View view = inflater.inflate(R.layout.fragment_layout, container, false);
             LinearLayout mLinearLayout = (LinearLayout) view.findViewById(R.id.frRoot);

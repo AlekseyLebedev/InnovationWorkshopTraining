@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="request">Request first and last name</string>
+    <string name="hello">Hello, %1$s %2$s!</string>
+    <string name="first_name">First name</string>
+    <string name="last_name">Last name</string>
+</resources>
