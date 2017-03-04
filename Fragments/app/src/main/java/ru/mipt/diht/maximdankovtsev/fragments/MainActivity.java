@@ -11,9 +11,11 @@ public class MainActivity extends Activity {
 
     // Теги фрагментов
     final static String FRAGMENT_A_TAG = "FRAGMENT_A";
+
     final static String FRAGMENT_B_TAG = "FRAGMENT_B";
 
     private Fragment mFragmentA;
+
     private Fragment mFragmentB;
 
     public Fragment getFragmentA() {
