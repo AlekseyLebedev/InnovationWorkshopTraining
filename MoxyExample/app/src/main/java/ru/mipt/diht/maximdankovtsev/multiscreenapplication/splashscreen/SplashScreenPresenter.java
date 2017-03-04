@@ -1,11 +1,11 @@
-package ru.mipt.diht.maximdankovtsev.multiscreenapplication;
+package ru.mipt.diht.maximdankovtsev.multiscreenapplication.splashscreen;
 
 import com.arellomobile.mvp.InjectViewState;
 import com.arellomobile.mvp.MvpPresenter;
-import com.arellomobile.mvp.MvpView;
 
 import android.os.AsyncTask;
-import android.util.Log;
+
+import ru.mipt.diht.maximdankovtsev.multiscreenapplication.MainActivity;
 
 @InjectViewState
 public class SplashScreenPresenter extends MvpPresenter<SplashScreenView> {
@@ -17,12 +17,12 @@ public class SplashScreenPresenter extends MvpPresenter<SplashScreenView> {
             @Override
             protected Void doInBackground(final Integer... params) {
                 sleep(params[0]);
-                getViewState().substituteWithAnotherActivity(MainActivity.class);
                 return null;
             }
 
             @Override
             protected void onPostExecute(final Void aVoid) {
+                // Завершение работы SplashScreen и переход на основную активность
                 getViewState().substituteWithAnotherActivity(MainActivity.class);
             }
 

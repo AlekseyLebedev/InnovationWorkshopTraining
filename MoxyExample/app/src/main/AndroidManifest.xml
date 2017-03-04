@@ -9,16 +9,16 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity android:name=".MainActivity" />
-        <activity
-            android:name=".EnterNameActivity"
-            android:label="@string/title_activity_enter_name" />
-        <activity android:name=".SplashScreenActivity">
+        <activity android:name=".splashscreen.SplashScreenActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name=".ui.activity.getname.GetNameActivity"
+            android:label="@string/title_get_name_activity" />
     </application>
 
 </manifest>

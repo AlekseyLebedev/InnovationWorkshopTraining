@@ -3,7 +3,7 @@
     <string name="splash_label">Splash Screen Demo</string>
     <string name="request_name">Request first and last name</string>
     <string name="hello">Hello</string>
-    <string name="title_activity_enter_name">EnterNameActivity</string>
+    <string name="title_get_name_activity">GetActivity</string>
 
     <!--Request name text edit hints-->
     <string name="hint_first_name">First name</string>

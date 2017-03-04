@@ -3,36 +3,39 @@ package ru.mipt.diht.maximdankovtsev.multiscreenapplication;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
-import android.os.Parcel;
-import android.os.Parcelable;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
+import ru.mipt.diht.maximdankovtsev.multiscreenapplication.ui.activity.getname.GetNameActivity;
+
 public class MainActivity extends Activity {
 
+    // Bundle ключ
     public static final String STATE_PERSON = "person";
 
+    // Код для запуска активности получения имени и фамилии
     private static final int REQUEST_NAME_CODE = 1;
 
     private TextView helloLabel;
 
-    private Person person = new Person();
+    private Person person;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        person = new Person();
+        helloLabel = (TextView) findViewById(R.id.hello_label);
         Button requestNameButton = (Button) findViewById(R.id.button_request_name);
         requestNameButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent requestNameIntent = new Intent(MainActivity.this, EnterNameActivity.class);
+                Intent requestNameIntent = new Intent(MainActivity.this, GetNameActivity.class);
                 startActivityForResult(requestNameIntent, REQUEST_NAME_CODE);
             }
         });
-        helloLabel = (TextView) findViewById(R.id.hello_label);
     }
 
     @Override
@@ -70,65 +73,6 @@ public class MainActivity extends Activity {
         } else {
             return getResources().getString(R.string.hello) + ", " + person.getFirstName() + " "
                     + person.getSecondName() + "!";
-        }
-    }
-
-    static class Person implements Parcelable {
-
-        private String firstName;
-
-        private String secondName;
-
-        Person(String firstName, String secondName) {
-            this.firstName = firstName;
-            this.secondName = secondName;
-        }
-
-        Person() {
-        }
-
-        String getFirstName() {
-            return firstName;
-        }
-
-        void setFirstName(String firstName) {
-            this.firstName = firstName;
-        }
-
-        String getSecondName() {
-            return secondName;
-        }
-
-        void setSecondName(String secondName) {
-            this.secondName = secondName;
-        }
-
-        Person(Parcel in) {
-            firstName = in.readString();
-            secondName = in.readString();
-        }
-
-        public static final Creator<Person> CREATOR = new Creator<Person>() {
-            @Override
-            public Person createFromParcel(Parcel in) {
-                return new Person(in);
-            }
-
-            @Override
-            public Person[] newArray(int size) {
-                return new Person[size];
-            }
-        };
-
-        @Override
-        public int describeContents() {
-            return 0;
-        }
-
-        @Override
-        public void writeToParcel(Parcel dest, int flags) {
-            dest.writeString(firstName);
-            dest.writeString(secondName);
         }
     }
 }

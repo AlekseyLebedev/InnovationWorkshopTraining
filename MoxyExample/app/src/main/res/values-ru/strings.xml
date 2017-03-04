@@ -3,7 +3,7 @@
     <string name="splash_label">Экран приветствия</string>
     <string name="request_name">Запросить имя и фамилию</string>
     <string name="hello">Приветствуем</string>
-    <string name="title_activity_enter_name">Введите имя и фамилию</string>
+    <string name="title_get_name_activity">Введите имя и фамилию</string>
 
     <!--Request name text edit hints-->
     <string name="hint_first_name">Имя</string>
