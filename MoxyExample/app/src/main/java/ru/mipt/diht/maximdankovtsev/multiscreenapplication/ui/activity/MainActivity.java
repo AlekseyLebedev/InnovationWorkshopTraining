@@ -15,7 +15,6 @@ import ru.mipt.diht.maximdankovtsev.multiscreenapplication.Person;
 import ru.mipt.diht.maximdankovtsev.multiscreenapplication.R;
 import ru.mipt.diht.maximdankovtsev.multiscreenapplication.ui.activity.getname.GetNameActivity;
 
-//todo : compatActivity
 public class MainActivity extends MvpAppCompatActivity implements MainActivityView {
 
     // Intent.extra ключ
