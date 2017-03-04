@@ -14,7 +14,7 @@ public class SplashScreenPresenter extends MvpPresenter<SplashScreenView> {
 
     private final static int SPLASH_TIME_MS = 5000;
 
-    SplashScreenPresenter() {
+    public SplashScreenPresenter() {
         AsyncTask<Integer, Void, Void> sleepTask = new AsyncTask<Integer, Void, Void>() {
             @Override
             protected Void doInBackground(final Integer... params) {

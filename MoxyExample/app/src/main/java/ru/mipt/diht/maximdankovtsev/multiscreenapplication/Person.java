@@ -14,7 +14,7 @@ public class Person implements Parcelable {
         this.secondName = secondName;
     }
 
-    Person() {
+    public Person() {
     }
 
     public String getFirstName() {
