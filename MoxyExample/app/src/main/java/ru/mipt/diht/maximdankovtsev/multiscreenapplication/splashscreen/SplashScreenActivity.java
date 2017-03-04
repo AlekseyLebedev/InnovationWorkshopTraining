@@ -6,8 +6,8 @@ import com.arellomobile.mvp.presenter.InjectPresenter;
 import android.content.Intent;
 import android.os.Bundle;
 
-import ru.mipt.diht.maximdankovtsev.multiscreenapplication.MainActivity;
 import ru.mipt.diht.maximdankovtsev.multiscreenapplication.R;
+import ru.mipt.diht.maximdankovtsev.multiscreenapplication.ui.activity.MainActivity;
 
 public class SplashScreenActivity extends MvpActivity implements SplashScreenView {
 

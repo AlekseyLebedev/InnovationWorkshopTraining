@@ -5,7 +5,8 @@ import com.arellomobile.mvp.MvpPresenter;
 
 import android.os.AsyncTask;
 
-import ru.mipt.diht.maximdankovtsev.multiscreenapplication.MainActivity;
+import ru.mipt.diht.maximdankovtsev.multiscreenapplication.ui.activity.MainActivity;
+
 
 @InjectViewState
 public class SplashScreenPresenter extends MvpPresenter<SplashScreenView> {

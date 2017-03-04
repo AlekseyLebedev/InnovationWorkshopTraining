@@ -10,10 +10,10 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 
-import ru.mipt.diht.maximdankovtsev.multiscreenapplication.MainActivity;
 import ru.mipt.diht.maximdankovtsev.multiscreenapplication.Person;
 import ru.mipt.diht.maximdankovtsev.multiscreenapplication.R;
 import ru.mipt.diht.maximdankovtsev.multiscreenapplication.presentation.presenter.getname.GetNamePresenter;
+import ru.mipt.diht.maximdankovtsev.multiscreenapplication.ui.activity.MainActivity;
 
 public class GetNameActivity extends MvpActivity implements MvpView {
 
