@@ -1,13 +1,11 @@
-package ru.mipt.diht.maximdankovtsev.multiscreenapplication;
+package ru.mipt.diht.maximdankovtsev.multiscreenapplication.presentation.presenter;
 
 
 import com.arellomobile.mvp.InjectViewState;
 import com.arellomobile.mvp.MvpPresenter;
 
-import android.app.Activity;
-import android.content.Intent;
-
-import ru.mipt.diht.maximdankovtsev.multiscreenapplication.ui.activity.getname.GetNameActivity;
+import ru.mipt.diht.maximdankovtsev.multiscreenapplication.Person;
+import ru.mipt.diht.maximdankovtsev.multiscreenapplication.presentation.view.MainActivityView;
 
 @InjectViewState
 public class MainPresenter extends MvpPresenter<MainActivityView> {

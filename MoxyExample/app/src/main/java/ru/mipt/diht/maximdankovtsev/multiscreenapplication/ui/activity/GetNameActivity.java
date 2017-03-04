@@ -1,4 +1,4 @@
-package ru.mipt.diht.maximdankovtsev.multiscreenapplication.ui.activity.getname;
+package ru.mipt.diht.maximdankovtsev.multiscreenapplication.ui.activity;
 
 import com.arellomobile.mvp.MvpAppCompatActivity;
 import com.arellomobile.mvp.MvpView;
@@ -12,8 +12,7 @@ import android.widget.EditText;
 
 import ru.mipt.diht.maximdankovtsev.multiscreenapplication.Person;
 import ru.mipt.diht.maximdankovtsev.multiscreenapplication.R;
-import ru.mipt.diht.maximdankovtsev.multiscreenapplication.presentation.presenter.getname.GetNamePresenter;
-import ru.mipt.diht.maximdankovtsev.multiscreenapplication.ui.activity.MainActivity;
+import ru.mipt.diht.maximdankovtsev.multiscreenapplication.presentation.presenter.GetNamePresenter;
 
 public class GetNameActivity extends MvpAppCompatActivity implements MvpView {
 

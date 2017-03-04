@@ -1,4 +1,4 @@
-package ru.mipt.diht.maximdankovtsev.multiscreenapplication.splashscreen;
+package ru.mipt.diht.maximdankovtsev.multiscreenapplication.presentation.view;
 
 import com.arellomobile.mvp.MvpView;
 import com.arellomobile.mvp.viewstate.strategy.SkipStrategy;

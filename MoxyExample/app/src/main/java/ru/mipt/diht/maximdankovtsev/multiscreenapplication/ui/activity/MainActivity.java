@@ -9,11 +9,10 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
-import ru.mipt.diht.maximdankovtsev.multiscreenapplication.MainActivityView;
-import ru.mipt.diht.maximdankovtsev.multiscreenapplication.MainPresenter;
 import ru.mipt.diht.maximdankovtsev.multiscreenapplication.Person;
 import ru.mipt.diht.maximdankovtsev.multiscreenapplication.R;
-import ru.mipt.diht.maximdankovtsev.multiscreenapplication.ui.activity.getname.GetNameActivity;
+import ru.mipt.diht.maximdankovtsev.multiscreenapplication.presentation.presenter.MainPresenter;
+import ru.mipt.diht.maximdankovtsev.multiscreenapplication.presentation.view.MainActivityView;
 
 public class MainActivity extends MvpAppCompatActivity implements MainActivityView {
 

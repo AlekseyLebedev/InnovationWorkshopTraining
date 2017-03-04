@@ -1,10 +1,11 @@
-package ru.mipt.diht.maximdankovtsev.multiscreenapplication.splashscreen;
+package ru.mipt.diht.maximdankovtsev.multiscreenapplication.presentation.presenter;
 
 import com.arellomobile.mvp.InjectViewState;
 import com.arellomobile.mvp.MvpPresenter;
 
 import android.os.AsyncTask;
 
+import ru.mipt.diht.maximdankovtsev.multiscreenapplication.presentation.view.SplashScreenView;
 import ru.mipt.diht.maximdankovtsev.multiscreenapplication.ui.activity.MainActivity;
 
 

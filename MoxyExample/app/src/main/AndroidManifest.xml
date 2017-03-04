@@ -9,7 +9,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.Light">
         <activity android:name=".ui.activity.MainActivity" />
-        <activity android:name=".splashscreen.SplashScreenActivity">
+        <activity android:name=".ui.activity.SplashScreenActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -17,7 +17,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".ui.activity.getname.GetNameActivity"
+            android:name=".ui.activity.GetNameActivity"
             android:label="@string/title_get_name_activity" />
     </application>
 

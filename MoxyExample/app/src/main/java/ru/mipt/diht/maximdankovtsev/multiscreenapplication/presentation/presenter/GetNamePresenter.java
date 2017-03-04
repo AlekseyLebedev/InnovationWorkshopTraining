@@ -1,4 +1,4 @@
-package ru.mipt.diht.maximdankovtsev.multiscreenapplication.presentation.presenter.getname;
+package ru.mipt.diht.maximdankovtsev.multiscreenapplication.presentation.presenter;
 
 
 import com.arellomobile.mvp.InjectViewState;
