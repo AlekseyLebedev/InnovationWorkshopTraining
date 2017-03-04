@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">MultiScreenApplication</string>
+    <string name="splash_label">Splash Screen Demo</string>
+    <string name="request_name">Request first and last name</string>
+    <string name="hello">Hello</string>
+    <string name="title_activity_enter_name">EnterNameActivity</string>
+
+    <!--Request name text edit hints-->
+    <string name="hint_first_name">First name</string>
+    <string name="hint_second_name">Second name</string>
+</resources>
