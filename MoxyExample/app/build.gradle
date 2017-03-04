@@ -25,6 +25,8 @@ dependencies {
     provided 'com.arello-mobile:moxy-compiler:1.4.5'
     compile 'com.arello-mobile:moxy-android:1.4.5'
     annotationProcessor 'com.arello-mobile:moxy-compiler:1.4.5'
+    compile 'com.android.support:appcompat-v7:25.2.0'
+    compile 'com.arello-mobile:moxy-app-compat:1.4.5'
 
     compile fileTree(dir: 'libs', include: ['*.jar'])
     androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {

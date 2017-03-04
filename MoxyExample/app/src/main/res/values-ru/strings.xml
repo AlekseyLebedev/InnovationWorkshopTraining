@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Многооконное приложение</string>
+    <string name="app_name">Moxy приложение</string>
     <string name="splash_label">Экран приветствия</string>
     <string name="request_name">Запросить имя и фамилию</string>
     <string name="hello">Приветствуем</string>

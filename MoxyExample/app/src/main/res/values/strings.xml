@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">MultiScreenApplication</string>
+    <string name="app_name">Moxy Example</string>
     <string name="splash_label">Splash Screen Demo</string>
     <string name="request_name">Request first and last name</string>
     <string name="hello">Hello</string>

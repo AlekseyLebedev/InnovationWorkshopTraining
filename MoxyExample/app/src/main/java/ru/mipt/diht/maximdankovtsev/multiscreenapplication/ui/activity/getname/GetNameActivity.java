@@ -1,6 +1,6 @@
 package ru.mipt.diht.maximdankovtsev.multiscreenapplication.ui.activity.getname;
 
-import com.arellomobile.mvp.MvpActivity;
+import com.arellomobile.mvp.MvpAppCompatActivity;
 import com.arellomobile.mvp.MvpView;
 import com.arellomobile.mvp.presenter.InjectPresenter;
 
@@ -15,7 +15,7 @@ import ru.mipt.diht.maximdankovtsev.multiscreenapplication.R;
 import ru.mipt.diht.maximdankovtsev.multiscreenapplication.presentation.presenter.getname.GetNamePresenter;
 import ru.mipt.diht.maximdankovtsev.multiscreenapplication.ui.activity.MainActivity;
 
-public class GetNameActivity extends MvpActivity implements MvpView {
+public class GetNameActivity extends MvpAppCompatActivity implements MvpView {
 
     public static final String TAG = "GetName";
 
@@ -43,7 +43,7 @@ public class GetNameActivity extends MvpActivity implements MvpView {
                 Person person = new Person(mFirstNameEdit.getText().toString(),
                         mSecondNameEdit.getText().toString());
 
-                confirm.putExtra(MainActivity.STATE_PERSON, person);
+                confirm.putExtra(MainActivity.INTENT_EXTRA_PERSON, person);
                 GetNameActivity.this.setResult(RESULT_OK, confirm);
                 GetNameActivity.this.finish();
             }

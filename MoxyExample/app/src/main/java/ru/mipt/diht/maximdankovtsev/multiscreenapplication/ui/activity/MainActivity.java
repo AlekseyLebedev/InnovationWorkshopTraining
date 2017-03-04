@@ -1,6 +1,6 @@
 package ru.mipt.diht.maximdankovtsev.multiscreenapplication.ui.activity;
 
-import com.arellomobile.mvp.MvpActivity;
+import com.arellomobile.mvp.MvpAppCompatActivity;
 import com.arellomobile.mvp.presenter.InjectPresenter;
 
 import android.content.Intent;
@@ -16,11 +16,10 @@ import ru.mipt.diht.maximdankovtsev.multiscreenapplication.R;
 import ru.mipt.diht.maximdankovtsev.multiscreenapplication.ui.activity.getname.GetNameActivity;
 
 //todo : compatActivity
-public class MainActivity extends MvpActivity implements MainActivityView {
+public class MainActivity extends MvpAppCompatActivity implements MainActivityView {
 
-    // todo: теперь не bundle key
-    // Bundle и Intent.extra ключ
-    public static final String STATE_PERSON = "person";
+    // Intent.extra ключ
+    public static final String INTENT_EXTRA_PERSON = "person";
 
     // Код для запуска активности получения имени и фамилии
     private static final int REQUEST_NAME_CODE = 1;
@@ -50,7 +49,7 @@ public class MainActivity extends MvpActivity implements MainActivityView {
         super.onActivityResult(requestCode, resultCode, data);
         if (requestCode == REQUEST_NAME_CODE && resultCode == RESULT_OK) {
             // Сообщаем презентеру, что пользователь изменил свои данные
-            Person person = data.getParcelableExtra(STATE_PERSON);
+            Person person = data.getParcelableExtra(INTENT_EXTRA_PERSON);
             mMainPresenter.onPersonChanged(person);
         }
     }
