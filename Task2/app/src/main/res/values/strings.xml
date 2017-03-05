@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Task2</string>
+    <string name="request">Запросить имя и фамилию</string>
+    <string name="hello">Привет, !</string>
+    <string name="name">Имя</string>
+    <string name="last_name">Фамилия</string>
+    <string name="ok">OK</string>
+</resources>
