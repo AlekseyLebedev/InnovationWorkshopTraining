@@ -1,0 +1,20 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.evgeniatveritinova.task3.FirstFragment"
+    android:id="@+id/first_fragment">
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/button"
+        android:text="@string/button"/>
+
+    <EditText
+        android:id="@+id/edit_text"
+        android:layout_width="172dp"
+        android:layout_height="wrap_content"
+        android:hint="@string/edit"/>
+
+</LinearLayout>
