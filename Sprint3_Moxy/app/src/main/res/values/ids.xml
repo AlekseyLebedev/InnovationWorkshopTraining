@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item name="firstName" type="id">first</item>
+    <item name="lastName" type="id">second</item>
+    <item name="ok" type="id">ok</item>
+</resources>

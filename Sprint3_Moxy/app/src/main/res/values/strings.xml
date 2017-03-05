@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Sprint3_Moxy</string>
+    <string name="hello">Hello!</string>
+    <string name="reqest">Request first and last name</string>
+    <string name="name"> </string>
+    <string name="first_name">First name</string>
+    <string name="last_name">Second Name</string>
+</resources>
