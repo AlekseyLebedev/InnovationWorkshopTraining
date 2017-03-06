@@ -9,9 +9,6 @@ import android.widget.TextView;
 
 public class Activity2 extends AppCompatActivity {
 
-    public final static int GET_NAME = 0;
-
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
