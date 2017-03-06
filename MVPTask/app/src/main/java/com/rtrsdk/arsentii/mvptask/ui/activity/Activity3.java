@@ -21,7 +21,7 @@ public class Activity3 extends MvpAppCompatActivity implements Activity3View {
 
     public static final String TAG = "Activity3";
 
-    @InjectPresenter(type = PresenterType.GLOBAL, tag = TAG)
+    @InjectPresenter
     Activity3Presenter mActivity3Presenter;
 
     public static Intent getIntent(final Context context) {

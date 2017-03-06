@@ -23,7 +23,7 @@ public class Activity2 extends MvpAppCompatActivity implements Activity2View {
 
     public static final String TAG = "Activity2";
 
-    @InjectPresenter(type = PresenterType.GLOBAL, tag = TAG)
+    @InjectPresenter
     Activity2Presenter mActivity2Presenter;
 
 
