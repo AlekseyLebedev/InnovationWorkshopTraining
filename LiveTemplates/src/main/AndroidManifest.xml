@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <application>
+        <activity android:name="com.example.evgeniatveritinova.livetemplates.ui.activity.blank.SplashScreen" />
+        <activity android:name="com.example.evgeniatveritinova.livetemplates.blank.MainActivity" />
+        <activity android:name="com.example.evgeniatveritinova.livetemplates.presentation.presenter.blank.blank.RequestActivity" />
+        <activity android:name="com.example.evgeniatveritinova.livetemplates.ui.activity.blank.RequestActivity" />
+    </application>
+
+</manifest>
