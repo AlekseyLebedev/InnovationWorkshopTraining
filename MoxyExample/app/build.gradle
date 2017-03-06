@@ -5,8 +5,8 @@ android {
     buildToolsVersion "25.0.2"
     defaultConfig {
         applicationId "ru.mipt.diht.maximdankovtsev.multiscreenapplication"
-        minSdkVersion 25
-        targetSdkVersion 25
+        minSdkVersion 18
+        targetSdkVersion 18
         versionCode 1
         versionName "1.0"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
@@ -16,6 +16,8 @@ android {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
+    }
+    productFlavors {
     }
 }
 
@@ -27,8 +29,7 @@ dependencies {
     annotationProcessor 'com.arello-mobile:moxy-compiler:1.4.5'
     compile 'com.android.support:appcompat-v7:25.2.0'
     compile 'com.arello-mobile:moxy-app-compat:1.4.5'
-
-    compile fileTree(dir: 'libs', include: ['*.jar'])
+    compile fileTree(include: ['*.jar'], dir: 'libs')
     androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
         exclude group: 'com.android.support', module: 'support-annotations'
     })
