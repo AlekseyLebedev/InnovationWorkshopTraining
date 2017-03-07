@@ -27,10 +27,15 @@ public class CameraActivity extends AppCompatActivity implements SurfaceHolder.C
 
     private static final int PREVIEW_HEIGHT = 720;
 
+
     Camera mCamera;
+
+    // Системный id камеры, используется для получения CameraInfo для определения rotation
+    int mCameraId;
 
     private SurfaceView mSurfaceView;
 
+    //todo: похоже этот флаг можно заменить проверкой == null у Surface
     private boolean mIsSurfaceCreated;
 
     // Сама Surface доступна только между событиями surfaceCreated и surfaceDestroyed.
@@ -74,20 +79,23 @@ public class CameraActivity extends AppCompatActivity implements SurfaceHolder.C
         int degrees = 0;
         switch (rotation) {
             case Surface.ROTATION_0:
-                degrees = 90;
+                degrees = 0;
                 break;
             case Surface.ROTATION_90:
-                degrees = 0;
+                degrees = 90;
                 break;
             case Surface.ROTATION_180:
-                degrees = 0;
-                break;
-            case Surface.ROTATION_270:
                 degrees = 180;
                 break;
+            case Surface.ROTATION_270:
+                degrees = 270;
+                break;
         }
-
-        camera.setDisplayOrientation(degrees);
+        // Получение абсолютного поворота камеры относительно натурального положения экрана
+        Camera.CameraInfo cameraInfo = new Camera.CameraInfo();
+        Camera.getCameraInfo(mCameraId, cameraInfo);
+        int initialCameraRotation = cameraInfo.orientation;
+        camera.setDisplayOrientation((initialCameraRotation - degrees + 360) % 360);
     }
 
     @Override
@@ -129,26 +137,41 @@ public class CameraActivity extends AppCompatActivity implements SurfaceHolder.C
         }
     }
 
-    // Получение и настрой Camera
-    Camera initializeCamera() {
-        // Получение камеры
-        Camera newCamera = null;
-        try {
-            newCamera = Camera.open();
-        } catch (Exception e) {
-            e.printStackTrace();
-            finish();
-        }
-        assert newCamera != null;
-        Log.d(TAG, "initializeCamera: camera is opened");
+    // Получение и настройка CameraWithId
+    CameraWithId initializeCamera() {
+        CameraWithId cameraWithId = getCameraInstance();
+        Camera newCamera = cameraWithId.camera();
+
         // Настройка режима фокусировки и размера изображения
+        assert newCamera != null;
         Camera.Parameters parameters = newCamera.getParameters();
         parameters.setFocusMode(Camera.Parameters.FOCUS_MODE_CONTINUOUS_PICTURE);
         parameters.setPreviewSize(PREVIEW_WIDTH, PREVIEW_HEIGHT);
         newCamera.setParameters(parameters);
         updateCameraRotation(newCamera);
         Log.d(TAG, "initializeCamera: parameters are set");
-        return newCamera;
+        return cameraWithId;
+    }
+
+    // Пытается найти и открыть первую доступную камеру.
+    // Возвращает камеру и ее id.
+    private CameraWithId getCameraInstance() {
+        // Поиск нужен чтобы получить id камеры, иначе невозможно никак
+        // Camera Id нужен для коректной обработки поворотов
+        Camera newCamera = null;
+        int newCameraId = -1;
+        for (int i = 0; i < Camera.getNumberOfCameras(); ++i) {
+            try {
+                newCamera = Camera.open();
+                newCameraId = i;
+                Log.d(TAG, "getCameraInstance: Camera is found and opened, id:" + newCameraId);
+                break;
+            } catch (Exception e) {
+                e.printStackTrace();
+                finish();
+            }
+        }
+        return new CameraWithId(newCamera, newCameraId);
     }
 
     // Проверяет разрешен ли доступ к камере, или запрашивает доступ в противном случае
@@ -182,9 +205,34 @@ public class CameraActivity extends AppCompatActivity implements SurfaceHolder.C
     // Когда гарантированно получены права доступа к камере, можно открыть и настроить ее,
     // и, если целевая поверхность была создана раньше камеры, то присоеденить новую камеру к ней.
     private void onCameraAccessGranted() {
-        mCamera = initializeCamera();
+        CameraWithId cameraWithId = initializeCamera();
+        mCamera = cameraWithId.camera();
+        mCameraId = cameraWithId.id();
         if (mIsSurfaceCreated) {
             tryStartCameraPreview();
+        }
+    }
+
+    // Класс объединяет в себе Camera и ее системный Id.
+    // Это требуется, потому что не существует способа по уже созданному объекту Camera
+    // получить ее Id(который в свою очередь требуется для обработки повоторов камеры).
+    private static class CameraWithId {
+
+        private Camera mCamera;
+
+        private int mId;
+
+        Camera camera() {
+            return mCamera;
+        }
+
+        int id() {
+            return mId;
+        }
+
+        CameraWithId(final Camera camera, final int id) {
+            mCamera = camera;
+            mId = id;
         }
     }
 }
