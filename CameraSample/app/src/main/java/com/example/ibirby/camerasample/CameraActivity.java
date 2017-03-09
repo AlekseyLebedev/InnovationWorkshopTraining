@@ -8,10 +8,9 @@ import android.support.v4.app.ActivityCompat;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
+import android.view.Surface;
 import android.view.SurfaceHolder;
 import android.view.SurfaceView;
-
-import java.io.IOException;
 
 import static android.Manifest.permission.CAMERA;
 
@@ -21,6 +20,7 @@ public class CameraActivity extends AppCompatActivity {
     private static final String TAG = "CameraActivity";
     private SurfaceView mSurfaceView;
     private Camera mCamera;
+    Camera.CameraInfo mInfo;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -42,6 +42,7 @@ public class CameraActivity extends AppCompatActivity {
                         PackageManager.PERMISSION_GRANTED) {
                     mCamera.stopPreview();
                     try {
+                        setCameraOrientation();
                         mCamera.setPreviewDisplay(holder);
                         mCamera.startPreview();
                     } catch (Exception e) {
@@ -96,9 +97,9 @@ public class CameraActivity extends AppCompatActivity {
         params.setFocusMode(Camera.Parameters.FOCUS_MODE_AUTO);
         mCamera.setParameters(params);
         Log.d(TAG, "initializeCamera: set Params");
-        Camera.CameraInfo info = new Camera.CameraInfo();
-        Camera.getCameraInfo(i, info);
-        mCamera.setDisplayOrientation(info.orientation);
+        mInfo = new Camera.CameraInfo();
+        Camera.getCameraInfo(i, mInfo);
+        mCamera.setDisplayOrientation(mInfo.orientation);
         Log.d(TAG, "initializeCamera: set Orientation");
     }
 
@@ -123,5 +124,26 @@ public class CameraActivity extends AppCompatActivity {
                 break;
             }
         }
+    }
+
+    private void setCameraOrientation(){
+        int rotation = getWindowManager().getDefaultDisplay()
+                .getRotation();
+        int degrees = 0;
+        switch (rotation) {
+            case Surface.ROTATION_0: degrees = 0; break;
+            case Surface.ROTATION_90: degrees = 90; break;
+            case Surface.ROTATION_180: degrees = 180; break;
+            case Surface.ROTATION_270: degrees = 270; break;
+        }
+
+        int result;
+        if (mInfo.facing == Camera.CameraInfo.CAMERA_FACING_FRONT) {
+            result = (mInfo.orientation + degrees) % 360;
+            result = (360 - result) % 360;
+        } else {
+            result = (mInfo.orientation - degrees + 360) % 360;
+        }
+        mCamera.setDisplayOrientation(result);
     }
 }
