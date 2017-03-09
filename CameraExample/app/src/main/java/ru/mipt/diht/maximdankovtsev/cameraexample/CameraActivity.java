@@ -110,15 +110,32 @@ public class CameraActivity extends AppCompatActivity
     // Вызвается на каждый кадр превью, ищет самый яркий пиксель.
     @Override
     public void onPreviewFrame(final byte[] data, final Camera camera) {
-        Log.d(TAG, "onPreviewFrame");
-        processFrame(data);
+        if (mCamera == null) {
+            return;
+        }
+        Camera.Size size = mCamera.getParameters().getPreviewSize();
+        processFrame(data, size.height, size.width);
         // Закончили обрабутку буфера, теперь можно его внось добавить
         // в очередь для получения следующего кадра.
         camera.addCallbackBuffer(data);
     }
 
-    private void processFrame(final byte[] data) {
-
+    // Работа с NV21
+    private void processFrame(final byte[] pixels, int height, int width) {
+        // Суть: для каждой группы пикселей 2на2 хранится 4 Y по 1 байту каждый,
+        // а также U и V по 1 байту. Y и UV хранятся раздельно в виде: YYYY... (UV)...
+        // За искомую яркость отвечают как раз значения Y
+        int brightestPixelIndex = 0;
+        byte maxBrightness = 0;
+        int size = height * width;  // это не равно размеру pixels
+        for (int i = 0; i < size; ++i) {
+            if (pixels[i] > maxBrightness) {
+                maxBrightness = pixels[i];
+                brightestPixelIndex = i;
+            }
+        }
+        Log.d(TAG, "BRIGHTEST PIXEL AT (col= " + brightestPixelIndex % width + ", row= "
+                + brightestPixelIndex / width + ")");
     }
 
     @Override
