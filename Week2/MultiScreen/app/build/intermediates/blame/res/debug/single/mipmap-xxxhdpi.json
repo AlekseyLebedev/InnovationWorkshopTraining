@@ -6,5 +6,13 @@
     {
         "merged": "C:\\AndroidSDK\\Projects\\InnovationWorkshopTraining\\Oreshkina\\Week2\\MultiScreen\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxxhdpi\\ic_launcher.png",
         "source": "C:\\AndroidSDK\\Projects\\InnovationWorkshopTraining\\Oreshkina\\Week2\\MultiScreen\\app\\src\\main\\res\\mipmap-xxxhdpi\\ic_launcher.png"
+    },
+    {
+        "merged": "C:\\AndroidSDK\\Oreshkina\\Week2\\MultiScreen\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxxhdpi\\ic_launcher.png",
+        "source": "C:\\AndroidSDK\\Oreshkina\\Week2\\MultiScreen\\app\\src\\main\\res\\mipmap-xxxhdpi\\ic_launcher.png"
+    },
+    {
+        "merged": "C:\\AndroidSDK\\Projects\\InnovationWorkshopTraining\\Week2\\MultiScreen\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxxhdpi\\ic_launcher.png",
+        "source": "C:\\AndroidSDK\\Projects\\InnovationWorkshopTraining\\Week2\\MultiScreen\\app\\src\\main\\res\\mipmap-xxxhdpi\\ic_launcher.png"
     }
 ]
