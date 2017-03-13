@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        is-multidex="true"
+        jar="C:\AndroidSDK\Projects\InnovationWorkshopTraining\Oreshkina\Week1_Practice2\app\build\intermediates\exploded-aar\com.android.support\support-v4\25.1.1\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="d7c42c80f6509b9ea4db28ca7859ffae08ec5741">
+        <dex dex="C:\AndroidSDK\Projects\InnovationWorkshopTraining\Oreshkina\Week1_Practice2\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-v4-25.1.1_61dd690c22e5dc5e6eea6264992ce8be0a2ec389\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\AndroidSDK\Projects\InnovationWorkshopTraining\Oreshkina\Week1_Practice2\app\build\intermediates\exploded-aar\com.android.support\appcompat-v7\25.1.1\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="ecb496cc08dd52551fc5ec6db3bc0632e95a89bb">
+        <dex dex="C:\AndroidSDK\Projects\InnovationWorkshopTraining\Oreshkina\Week1_Practice2\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-appcompat-v7-25.1.1_16261a05236ddf1090a2368e75283535266e5c9a\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\AndroidSDK\Projects\InnovationWorkshopTraining\Oreshkina\Week1_Practice2\app\build\intermediates\incremental-classes\debug\instant-run-bootstrap.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="b9b590a73501a9672ec50a2e811271486f108adb">
+        <dex dex="C:\AndroidSDK\Projects\InnovationWorkshopTraining\Oreshkina\Week1_Practice2\app\build\intermediates\transforms\dex\debug\folders\1000\10\instant-run-bootstrap_275c2e24155a6b81ed708598e6887bfe9958bfcf\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\AndroidSDK\Projects\InnovationWorkshopTraining\Oreshkina\Week1_Practice2\app\build\intermediates\exploded-aar\com.android.support\support-core-utils\25.1.1\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="0fb891e8f0cfba0513043a7bb357513d229ca2cd">
+        <dex dex="C:\AndroidSDK\Projects\InnovationWorkshopTraining\Oreshkina\Week1_Practice2\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-core-utils-25.1.1_8558a0ef12e9141c0a953769e60f03ce53af7cb3\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\AndroidSDK\Projects\InnovationWorkshopTraining\Oreshkina\Week1_Practice2\app\build\intermediates\exploded-aar\com.android.support\support-fragment\25.1.1\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="e2719c102dca3a7a5b02ce07f769362da6ddb4ab">
+        <dex dex="C:\AndroidSDK\Projects\InnovationWorkshopTraining\Oreshkina\Week1_Practice2\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-fragment-25.1.1_dc9a224586e1379d899391e7da9285da7e02f7d0\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\AndroidSDK\SDK\extras\android\m2repository\com\android\support\support-annotations\25.1.1\support-annotations-25.1.1.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="b59b6ee8d6ecc03e672d253800430343493a6ed8">
+        <dex dex="C:\AndroidSDK\Projects\InnovationWorkshopTraining\Oreshkina\Week1_Practice2\app\build\intermediates\transforms\dex\debug\folders\1000\10\support-annotations-25.1.1_55884561695e992273a6c13b7a6b33591b624764\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\AndroidSDK\Projects\InnovationWorkshopTraining\Oreshkina\Week1_Practice2\app\build\intermediates\incremental-runtime-classes\debug\instant-run.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="609d05c43942a9a902c315b79464e2fbf348fa03">
+        <dex dex="C:\AndroidSDK\Projects\InnovationWorkshopTraining\Oreshkina\Week1_Practice2\app\build\intermediates\transforms\dex\debug\folders\1000\10\instant-run_07a452011ce79268f03e42c95ec14b08d4703b31\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\AndroidSDK\Projects\InnovationWorkshopTraining\Oreshkina\Week1_Practice2\app\build\intermediates\exploded-aar\com.android.support\support-compat\25.1.1\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="02741d05d4b697fba5e279e9881aaa1da0ca7c7f">
+        <dex dex="C:\AndroidSDK\Projects\InnovationWorkshopTraining\Oreshkina\Week1_Practice2\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-compat-25.1.1_b0942cfe4b74f24948c853b22fe502b45c1df40c\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\AndroidSDK\Projects\InnovationWorkshopTraining\Oreshkina\Week1_Practice2\app\build\intermediates\exploded-aar\com.android.support\animated-vector-drawable\25.1.1\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="0d191c1a09e4892d059e5ce749e4ad4e08129e35">
+        <dex dex="C:\AndroidSDK\Projects\InnovationWorkshopTraining\Oreshkina\Week1_Practice2\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-animated-vector-drawable-25.1.1_24d7001f8cdb679d2b4c1cb11317baec068f03ae\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\AndroidSDK\Projects\InnovationWorkshopTraining\Oreshkina\Week1_Practice2\app\build\intermediates\exploded-aar\com.android.support\support-vector-drawable\25.1.1\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="c03bf57f358aa10d253f21989e93bcf6014b3b17">
+        <dex dex="C:\AndroidSDK\Projects\InnovationWorkshopTraining\Oreshkina\Week1_Practice2\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-vector-drawable-25.1.1_bb59d16041043d2e74494ddde83e909c0e9375a2\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\AndroidSDK\Projects\InnovationWorkshopTraining\Oreshkina\Week1_Practice2\app\build\intermediates\exploded-aar\com.android.support\support-core-ui\25.1.1\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="3e04ac8ca644ea7baddf6fdcf72e15c79e9df94a">
+        <dex dex="C:\AndroidSDK\Projects\InnovationWorkshopTraining\Oreshkina\Week1_Practice2\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-core-ui-25.1.1_f8835b4a587b1f244d2dc4421e3dcdeefd449a71\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\AndroidSDK\Projects\InnovationWorkshopTraining\Oreshkina\Week1_Practice2\app\build\intermediates\exploded-aar\com.android.support\support-media-compat\25.1.1\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="7bde4c34162092e0a77e7f12dc85ed77c484cf5c">
+        <dex dex="C:\AndroidSDK\Projects\InnovationWorkshopTraining\Oreshkina\Week1_Practice2\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-media-compat-25.1.1_c7fadf672c541ffd33da1efc0538e37b63462112\classes.dex" />
+    </item>
+
+</items>

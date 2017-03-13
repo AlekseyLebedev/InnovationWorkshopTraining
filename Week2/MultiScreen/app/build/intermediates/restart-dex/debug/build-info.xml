@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<instant-run
+    abi="x86_64,x86"
+    api-level="25"
+    density="xxhdpi"
+    format="8"
+    plugin-version="2.2.3"
+    timestamp="11748247424551"
+    token="-1130043122931076294"
+    verifier="COLD_SWAP_REQUESTED" >
+
+    <task
+        name="javac"
+        duration="228" />
+    <task
+        name="instant-run-dex"
+        duration="0" />
+    <task
+        name="instant-run-transform"
+        duration="128" />
+    <task
+        name="verifier"
+        duration="6" />
+
+    <artifact
+        location="C:\AndroidSDK\Projects\InnovationWorkshopTraining\Oreshkina\MultiScreen\app\build\intermediates\transforms\dex\debug\folders\1000\5\slice_6\classes.dex"
+        type="DEX" />
+
+    <build
+        timestamp="6069288660881"
+        verifier="FULL_BUILD_REQUESTED" >
+        <artifact
+            location="C:\AndroidSDK\Projects\InnovationWorkshopTraining\Oreshkina\MultiScreen\app\build\outputs\apk\app-debug.apk"
+            type="MAIN" />
+    </build>
+    <build
+        timestamp="11529211141654"
+        verifier="COLD_SWAP_REQUESTED" >
+        <artifact
+            location="C:\AndroidSDK\Projects\InnovationWorkshopTraining\Oreshkina\MultiScreen\app\build\intermediates\instant-run-resources\resources-debug.ir.ap_"
+            type="RESOURCES" />
+    </build>
+    <build
+        timestamp="11748247424551"
+        verifier="COLD_SWAP_REQUESTED" >
+        <artifact
+            location="C:\AndroidSDK\Projects\InnovationWorkshopTraining\Oreshkina\MultiScreen\app\build\intermediates\transforms\dex\debug\folders\1000\5\slice_6\classes.dex"
+            type="DEX" />
+    </build>
+
+</instant-run>

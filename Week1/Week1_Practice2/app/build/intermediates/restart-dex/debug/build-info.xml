@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<instant-run
+    abi="x86_64,x86"
+    api-level="25"
+    density="xxhdpi"
+    format="8"
+    plugin-version="2.2.3"
+    timestamp="287245147902834"
+    token="-5475340585440006966"
+    verifier="COLD_SWAP_REQUESTED" >
+
+    <task
+        name="javac"
+        duration="243" />
+    <task
+        name="instant-run-dex"
+        duration="0" />
+    <task
+        name="instant-run-transform"
+        duration="32" />
+    <task
+        name="verifier"
+        duration="1" />
+
+    <artifact
+        location="C:\AndroidSDK\Projects\InnovationWorkshopTraining\Oreshkina\Week1_Practice2\app\build\intermediates\transforms\dex\debug\folders\1000\5\slice_3\classes.dex"
+        type="DEX" />
+
+    <build
+        timestamp="286891758150124"
+        verifier="FULL_BUILD_REQUESTED" >
+        <artifact
+            location="C:\AndroidSDK\Projects\InnovationWorkshopTraining\Oreshkina\Week1_Practice2\app\build\outputs\apk\app-debug.apk"
+            type="MAIN" />
+    </build>
+    <build
+        timestamp="287245147902834"
+        verifier="COLD_SWAP_REQUESTED" >
+        <artifact
+            location="C:\AndroidSDK\Projects\InnovationWorkshopTraining\Oreshkina\Week1_Practice2\app\build\intermediates\transforms\dex\debug\folders\1000\5\slice_3\classes.dex"
+            type="DEX" />
+    </build>
+
+</instant-run>

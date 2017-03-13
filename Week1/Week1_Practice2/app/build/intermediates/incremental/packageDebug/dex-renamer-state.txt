@@ -1,0 +1,7 @@
+#Sun Mar 05 22:17:45 MSK 2017
+base.0=C\:\\AndroidSDK\\Projects\\InnovationWorkshopTraining\\Oreshkina\\Week1_Practice2\\app\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\10\\instant-run_07a452011ce79268f03e42c95ec14b08d4703b31
+renamed.1=classes2.dex
+renamed.0=classes.dex
+file.1=C\:\\AndroidSDK\\Projects\\InnovationWorkshopTraining\\Oreshkina\\Week1_Practice2\\app\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\10\\instant-run-bootstrap_275c2e24155a6b81ed708598e6887bfe9958bfcf\\classes.dex
+base.1=C\:\\AndroidSDK\\Projects\\InnovationWorkshopTraining\\Oreshkina\\Week1_Practice2\\app\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\10\\instant-run-bootstrap_275c2e24155a6b81ed708598e6887bfe9958bfcf
+file.0=C\:\\AndroidSDK\\Projects\\InnovationWorkshopTraining\\Oreshkina\\Week1_Practice2\\app\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\10\\instant-run_07a452011ce79268f03e42c95ec14b08d4703b31\\classes.dex
